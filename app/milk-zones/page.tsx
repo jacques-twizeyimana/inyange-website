@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CartonIcon, CheckIcon, GlassIcon, JerrycanIcon, YoghurtCupIcon } from "@/components/icons";
+import { MilkPourStage } from "@/components/MilkPourStage";
 import { Faq, SectionHead } from "@/components/sections";
 import { WaveDivider } from "@/components/WaveDivider";
 import { FranchiseForm } from "./FranchiseForm";
@@ -34,7 +35,7 @@ export default function MilkZonesPage() {
   return (
     <>
       <section className="band on-brand" style={{ overflow: "hidden" }}>
-        <div className="wrap grid-2" style={{ gap: 40, paddingTop: 64, paddingBottom: 24 }}>
+        <div className="wrap grid-2" style={{ gap: 40, paddingTop: 64, paddingBottom: 8 }}>
           <div className="stack" style={{ alignItems: "flex-start", gap: 20 }}>
             <p className="eyebrow">Inyange Milk Zones</p>
             <h1 className="display-xl" style={{ color: "var(--on-brand)" }}>
@@ -54,19 +55,7 @@ export default function MilkZonesPage() {
               </a>
             </div>
           </div>
-          <div aria-hidden="true" style={{ display: "flex", justifyContent: "center", alignItems: "flex-end", gap: 20, minHeight: 340, paddingTop: 24 }}>
-            <svg viewBox="0 0 120 180" style={{ width: 120, height: 180 }}>
-              <path d="M10 6 H110 L98 170 Q97 176 91 176 H29 Q23 176 22 170 Z" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinejoin="round" />
-              <path d="M14 40 C40 30 60 46 84 38 S106 36 106 36 L97.5 164 Q97 170 91 170 H29 Q23 170 22.5 164 Z" fill="#ffffff" />
-              <rect x="20" y="20" width="5" height="120" rx="2.5" fill="#ffffff" opacity=".35" />
-            </svg>
-            <svg viewBox="0 0 160 240" style={{ width: 170, height: 255 }}>
-              <path d="M14 8 H146 L130 226 Q129 233 121 233 H39 Q31 233 30 226 Z" fill="none" stroke="#ffffff" strokeWidth="3.5" strokeLinejoin="round" />
-              <path d="M19 60 C50 48 80 70 112 58 S141 54 141 54 L129.5 218 Q129 226 121 226 H39 Q31 226 30.5 218 Z" fill="#ffffff" />
-              <rect x="26" y="26" width="6" height="160" rx="3" fill="#ffffff" opacity=".35" />
-            </svg>
-            <JerrycanIcon strokeWidth={1.2} style={{ width: 150, height: 150, color: "#ffffff" }} />
-          </div>
+          <MilkPourStage pourKey="inyange-milk-zones-hero" label="Fresh Inyange milk pouring into a chilled glass" />
         </div>
       </section>
       <WaveDivider />
@@ -87,28 +76,20 @@ export default function MilkZonesPage() {
       </section>
 
       <section className="section" style={{ background: "var(--surface-sunken)" }}>
-        <div className="wrap stack" style={{ gap: 32 }}>
-          <SectionHead eyebrow="How it stays fresh" title="From the farm to your glass, cold all the way." />
-          <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
-            {steps.map((s, i) => (
-              <li key={s.title} className="stack" style={{ gap: 10 }}>
-                <span
-                  aria-hidden="true"
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: "var(--radius-pill)",
-                    background: "var(--inyange-blue)",
-                    color: "var(--on-brand)",
-                    display: "grid",
-                    placeItems: "center",
-                    fontFamily: "var(--font-display)",
-                    fontSize: 22,
-                    fontWeight: 800,
-                  }}
-                >
-                  {i + 1}
-                </span>
+        <div className="wrap stack" style={{ gap: 48 }}>
+          <div className="grid-2" style={{ alignItems: "end", gap: 24 }}>
+            <div className="stack" style={{ gap: 12 }}>
+              <p className="eyebrow">From farm to glass</p>
+              <h2 className="display-l">Cold all the way.</h2>
+            </div>
+            <p className="body-l muted">
+              From the farm to your glass, Milk Zone milk stays cold at every step — so it reaches you fresh and safe to
+              drink.
+            </p>
+          </div>
+          <ol className="cold-chain">
+            {steps.map((s) => (
+              <li key={s.title}>
                 <h3 className="title">{s.title}</h3>
                 <p className="plain muted">{s.text}</p>
               </li>

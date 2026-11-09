@@ -144,6 +144,14 @@ details.faq p { margin: 12px 0 0; color: var(--ink-muted); }
 .journey-rail li.is-now::before { background: var(--inyange-blue); }
 .journey-rail .stat-figure { font-size: 28px; line-height: 32px; }
 
+/* cold chain: numbered farm-to-glass steps joined by a dashed line (Milk Zones) */
+.cold-chain { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 32px 24px; counter-reset: cold-step; }
+.cold-chain li { position: relative; display: flex; flex-direction: column; gap: 8px; padding-top: 72px; counter-increment: cold-step; }
+.cold-chain li::before { content: counter(cold-step); position: absolute; top: 0; left: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--inyange-blue); color: var(--on-brand); display: grid; place-items: center; font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+.cold-chain li::after { content: ""; position: absolute; top: 25px; left: 64px; right: -12px; border-top: 2px dashed var(--control-border); }
+.cold-chain li:last-child::after { display: none; }
+@media (max-width: 720px) { .cold-chain li::after { display: none; } }
+
 /* map placeholders */
 .map-box { border-radius: var(--radius-lg); background: var(--frost); border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; }
 .map-box > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
