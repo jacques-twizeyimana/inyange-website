@@ -20,6 +20,7 @@ const journey = [
   { year: "2021", text: "Work begins on the US$54 million Milk Powder Plant in Nyagatare." },
   { year: "2024", text: "Prime Minister Dr Édouard Ngirente inaugurates the Milk Powder Plant on 24 July." },
   { year: "2025", text: "Inyange instant whole milk powder launches for Rwandan homes." },
+  { year: "2026", text: "The Rwanda Social Security Board (RSSB) takes full ownership of Inyange Industries.", now: true },
 ];
 
 const plants = [
@@ -100,14 +101,16 @@ export default function AboutPage() {
       </section>
 
       <section id="journey" className="section" style={{ background: "var(--surface-sunken)" }}>
-        <div className="wrap stack" style={{ gap: 32 }}>
-          <SectionHead eyebrow="Our journey" title="From 3,000 litres a day to 200,000." maxWidth={9999} />
-          <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "0 32px" }}>
+        <div className="wrap stack" style={{ gap: 40 }}>
+          <SectionHead
+            eyebrow="Our journey"
+            title="Almost 30 years of Inyange."
+            lead="From 3,000 litres of milk a day in 2009 to more than 200,000 today."
+          />
+          <ol className="journey-rail" aria-label="Inyange milestones">
             {journey.map((j) => (
-              <li key={j.year} className="stack" style={{ borderTop: "2px solid var(--control-border)", padding: "20px 0 28px", gap: 6 }}>
-                <span className="stat-figure" style={{ fontSize: 32, lineHeight: "36px" }}>
-                  {j.year}
-                </span>
+              <li key={j.year} className={j.now ? "is-now" : undefined}>
+                <span className="stat-figure">{j.year}</span>
                 <span>{j.text}</span>
               </li>
             ))}

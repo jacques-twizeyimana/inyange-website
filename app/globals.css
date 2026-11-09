@@ -136,6 +136,14 @@ details.faq summary::after { content: "+"; color: var(--link); font-size: 26px; 
 details.faq[open] summary::after { content: "–"; }
 details.faq p { margin: 12px 0 0; color: var(--ink-muted); }
 
+/* journey rail: the years at a glance, scrolling sideways (About) */
+.journey-rail { list-style: none; margin: 0; padding: 12px 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 21%); overflow-x: auto; scroll-snap-type: x proximity; }
+.journey-rail li { scroll-snap-align: start; position: relative; display: flex; flex-direction: column; gap: 8px; padding: 28px 24px 0 0; border-top: 4px solid var(--line); }
+.journey-rail li::before { content: ""; position: absolute; top: -10px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 4px solid var(--inyange-blue); }
+.journey-rail li.is-now { border-top-color: var(--inyange-blue); }
+.journey-rail li.is-now::before { background: var(--inyange-blue); }
+.journey-rail .stat-figure { font-size: 28px; line-height: 32px; }
+
 /* map placeholders */
 .map-box { border-radius: var(--radius-lg); background: var(--frost); border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; }
 .map-box > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
