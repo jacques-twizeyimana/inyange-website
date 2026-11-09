@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored from the Inyange design system; kept byte-for-byte so it can be re-synced.
+    "lib/inyange/bundle.js",
   ]),
 ]);
 
