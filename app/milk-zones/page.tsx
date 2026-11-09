@@ -36,7 +36,7 @@ export default function MilkZonesPage() {
       <section className="band on-brand" style={{ overflow: "hidden" }}>
         <div className="wrap grid-2" style={{ gap: 40, paddingTop: 64, paddingBottom: 24 }}>
           <div className="stack" style={{ alignItems: "flex-start", gap: 20 }}>
-            <span className="iy-badge iy-badge--milk">Inyange Milk Zones · since 2014</span>
+            <p className="eyebrow">Inyange Milk Zones</p>
             <h1 className="display-xl" style={{ color: "var(--on-brand)" }}>
               Fresh milk, by the glass.
             </h1>

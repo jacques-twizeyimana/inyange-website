@@ -96,10 +96,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .chip:hover { background: var(--frost); color: var(--blue-deep); }
 .chip svg { width: 20px; height: 20px; color: var(--link); }
 
-/* size tags on product cards */
-.sizes { display: flex; flex-wrap: wrap; gap: 6px; }
-.size { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); border: 1px solid var(--line); font-size: 13px; font-weight: 600; color: var(--ink); }
-
 /* fixed waves: dividers, footer and product-card milk lines hold still */
 .iy-wave svg, .iy-card-milk svg { animation: none !important; transform: none !important; will-change: auto !important; }
 

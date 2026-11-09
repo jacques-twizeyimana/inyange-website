@@ -1,11 +1,9 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
-import { KeepChilledIcon } from "./icons";
 import { CardMilk } from "./WaveDivider";
 
 export type Variant = "whole-gold" | "sky" | "pasture" | "butter" | "inyange-blue";
-export type CardBadge = "chilled" | { label: string; tone: "gold" | "milk" | "frost" | "blue" | "pasture" };
 
 type Media =
   /** A cut-out pack shot sitting above the milk line. */
@@ -18,41 +16,24 @@ type Media =
 export function ProductCard({
   variant,
   media,
-  badge,
   milkHeight = "30%",
-  eyebrow,
   title,
   description,
-  sizes,
-  note,
   href = "/distributors",
   linkLabel = "Where to buy →",
 }: {
   variant: Variant;
   media: Media;
-  badge?: CardBadge;
   milkHeight?: string;
-  eyebrow: string;
   title: string;
+  /** One or two sentences; pack sizes and storage go here rather than in tags. */
   description: string;
-  sizes?: string[];
-  note?: { label: string; text: string } | string;
   href?: string;
   linkLabel?: string;
 }) {
   return (
     <article className="iy-card" style={{ width: "auto", "--variant": `var(--${variant})` } as CSSProperties}>
       <div className="iy-card-media has-shot">
-        {badge === "chilled" ? (
-          <span className="iy-badge iy-badge--frost" style={{ zIndex: 2 }}>
-            <KeepChilledIcon />
-            Keep refrigerated
-          </span>
-        ) : badge ? (
-          <span className={`iy-badge iy-badge--${badge.tone}`} style={{ zIndex: 2 }}>
-            {badge.label}
-          </span>
-        ) : null}
         {media.kind === "shot" && (
           <Image className="shot" src={media.src} alt={media.alt} sizes="300px" style={media.maxWidth ? { maxWidth: media.maxWidth } : undefined} />
         )}
@@ -70,25 +51,8 @@ export function ProductCard({
       </div>
       <div className="iy-card-stripe" />
       <div className="iy-card-body">
-        <p className="eyebrow">{eyebrow}</p>
         <h3 className="iy-card-title">{title}</h3>
         <p className="plain muted">{description}</p>
-        {sizes && (
-          <div className="sizes">
-            {sizes.map((s) => (
-              <span key={s} className="size">
-                {s}
-              </span>
-            ))}
-          </div>
-        )}
-        {typeof note === "string" ? (
-          <p className="caption">{note}</p>
-        ) : note ? (
-          <p className="caption">
-            <strong style={{ color: "var(--ink)" }}>{note.label}</strong> {note.text}
-          </p>
-        ) : null}
         <div className="iy-card-actions">
           <Link className="more" href={href}>
             {linkLabel}
@@ -107,7 +71,6 @@ export function FamilyCard({
   alt,
   shotMaxWidth,
   milkHeight,
-  eyebrow,
   title,
   description,
   linkLabel,
@@ -118,7 +81,6 @@ export function FamilyCard({
   alt: string;
   shotMaxWidth?: string;
   milkHeight: string;
-  eyebrow: string;
   title: string;
   description: string;
   linkLabel: string;
@@ -131,7 +93,6 @@ export function FamilyCard({
       </div>
       <div className="iy-card-stripe" />
       <div className="iy-card-body">
-        <p className="eyebrow">{eyebrow}</p>
         <h3 className="iy-card-title">{title}</h3>
         <p className="plain muted">{description}</p>
         <span className="more" style={{ marginTop: "auto", paddingTop: 8 }}>
