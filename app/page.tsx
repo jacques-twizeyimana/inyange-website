@@ -20,6 +20,13 @@ const stats = [
 
 const news = [
   {
+    date: "27 August 2026",
+    title: "RSSB takes full ownership of Inyange Industries",
+    text: "The Rwanda Social Security Board has bought Inyange Industries, together with Ruliba Clays, from Crystal Ventures Ltd.",
+    href: "https://www.newtimes.co.rw/article/38467/news/rwanda/rssb-acquires-inyange-industries-ruliba-clays",
+    link: "Read the story →",
+  },
+  {
     date: "October 2025",
     title: "Inyange launches instant whole milk powder",
     text: "A Made in Rwanda instant milk powder for every home, made from Rwandan farmers’ milk to replace imported powder.",

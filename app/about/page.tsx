@@ -91,7 +91,10 @@ export default function AboutPage() {
               serve homes and businesses across Rwanda and sell regionally through certified distributors, taking part
               in the East African Community market.
             </p>
-            <p className="plain">Inyange Industries is part of Crystal Ventures Ltd.</p>
+            <p className="plain">
+              In August 2026 the Rwanda Social Security Board (RSSB) took full ownership of Inyange Industries,
+              buying the company from Crystal Ventures Ltd.
+            </p>
           </div>
         </div>
       </section>

@@ -9,9 +9,9 @@ export const company = {
   address: ["KN 3 Rd, Masaka", "P.O. Box 4584, Kigali, Rwanda"],
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Inyange+Industries+Masaka+Kigali",
   social: [
-    { label: "Facebook", href: "https://www.facebook.com/InyangeIndustryLimited" },
-    { label: "Instagram", href: "https://www.instagram.com/alwaysinyange/" },
-    { label: "X (Twitter)", href: "https://x.com/AlwaysInyange" },
+    { network: "facebook", label: "Facebook", href: "https://www.facebook.com/InyangeIndustryLimited" },
+    { network: "instagram", label: "Instagram", href: "https://www.instagram.com/alwaysinyange/" },
+    { network: "x", label: "X (Twitter)", href: "https://x.com/AlwaysInyange" },
   ],
 } as const;
 

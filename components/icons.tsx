@@ -137,3 +137,25 @@ export function MilkGlass({ width, height, level = "mid" }: { width: number; hei
     </svg>
   );
 }
+
+/* Social network marks, simplified and drawn in currentColor. Decorative: the link carries the name. */
+export function SocialIcon({ network }: { network: "facebook" | "instagram" | "x" }) {
+  if (network === "instagram") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      {network === "facebook" ? (
+        <path d="M13.6 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.6V4.3a21 21 0 0 0-2.3-.1c-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.6V21z" />
+      ) : (
+        <path d="M17.6 3.5h3l-6.6 7.5 7.7 9.5h-6l-4.7-6-5.4 6H2.6l7-8L2.3 3.5h6.2l4.3 5.6zm-1 15.3h1.7L7.5 5.1H5.7z" />
+      )}
+    </svg>
+  );
+}

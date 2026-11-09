@@ -86,9 +86,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .site-footer { width: 100%; background: var(--blue-deep); color: var(--on-brand); }
 .foot-link { color: var(--on-brand); text-decoration: none; font-size: 15px; line-height: 28px; }
 .foot-link:hover { color: var(--on-brand); text-decoration: underline; }
-.social { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: var(--radius-pill); border: 2px solid rgba(255,255,255,.6); color: var(--on-brand); font-weight: 600; font-size: 14px; text-decoration: none; }
+.social-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,.6); color: var(--on-brand); text-decoration: none; transition: background .15s, color .15s; }
 .social:hover { background: var(--milk); color: var(--inyange-blue); }
-.social svg { width: 18px; height: 18px; }
+.social svg { width: 20px; height: 20px; }
 
 /* chips used as in-page navigation */
 .chip { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: var(--radius-pill); border: 2px solid var(--control-border); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; }

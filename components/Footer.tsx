@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/images/inyange-logo.png";
 import { company } from "@/lib/site";
+import { SocialLinks } from "./SocialLinks";
 import { WaveDivider } from "./WaveDivider";
 
 export function Footer() {
@@ -39,13 +40,7 @@ export function Footer() {
           </div>
           <div className="stack" style={{ gap: 12 }}>
             <p className="eyebrow">Follow @AlwaysInyange</p>
-            <div className="row" style={{ gap: 8 }}>
-              {company.social.map((s) => (
-                <a key={s.href} className="social" href={s.href}>
-                  {s.label}
-                </a>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
         </div>
         <div
@@ -60,7 +55,7 @@ export function Footer() {
           }}
         >
           <span>© 2026 Inyange Industries Ltd. All rights reserved.</span>
-          <span>A Crystal Ventures Ltd company</span>
+          <span>Owned by the Rwanda Social Security Board (RSSB)</span>
         </div>
       </div>
     </footer>

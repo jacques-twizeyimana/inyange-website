@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
 import { Faq, PageHero } from "@/components/sections";
 import { company } from "@/lib/site";
+import { SocialLinks } from "@/components/SocialLinks";
 import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -60,13 +61,7 @@ export default function ContactPage() {
             <h2 className="title" style={{ color: "var(--on-brand)" }}>
               Follow @AlwaysInyange
             </h2>
-            <div className="row" style={{ gap: 8 }}>
-              {company.social.map((s) => (
-                <a key={s.href} className="social" href={s.href}>
-                  {s.label}
-                </a>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
         </div>
       </section>
