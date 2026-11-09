@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
-import { GreekYoghurtIcon } from "@/components/icons";
 import { ProductCard } from "@/components/ProductCard";
 import { PageHero } from "@/components/sections";
 import butter from "@/public/images/butter-500g.webp";
-import flavouredMilk from "@/public/images/flavoured-milk.webp";
 import freshCream from "@/public/images/fresh-cream.webp";
 import ikivuguto from "@/public/images/ikivuguto-5l.webp";
 import juice1lApple from "@/public/images/juice-1l-apple.webp";
@@ -46,7 +44,7 @@ const premiumBoxes: { name: string; src: StaticImageData }[] = [
   { name: "Passion", src: juice1lPassion },
 ];
 
-const packIcon = { className: "iy-pack" };
+// const packIcon = { className: "iy-pack" };
 
 export default function ProductsPage() {
   return (
@@ -119,7 +117,7 @@ export default function ProductsPage() {
           title="Low Fat Milk"
           description="The lighter UHT choice, with the same long life and no additives or preservatives. In 500 ml and 1 L sachets and 1 L boxes."
         />
-        <ProductCard
+        {/* <ProductCard
           variant="butter"
           media={{
             kind: "shot",
@@ -129,7 +127,7 @@ export default function ProductsPage() {
           }}
           title="Flavoured Milk"
           description="Strawberry, vanilla and chocolate UHT milk in 250 ml sachets — a favourite for school bags and lunchboxes."
-        />
+        /> */}
         <ProductCard
           variant="inyange-blue"
           media={{
@@ -223,12 +221,12 @@ export default function ProductsPage() {
           title="Yoghurt"
           description="Smooth and creamy, in strawberry, vanilla, apricot and more. In 200 g and 400 g cups; keep it in the fridge."
         />
-        <ProductCard
+        {/* <ProductCard
           variant="inyange-blue"
           media={{ kind: "icon", icon: <GreekYoghurtIcon {...packIcon} /> }}
           title="Greek Yoghurt"
           description="Thick, strained Greek-style yoghurt — for breakfast bowls, dips and desserts."
-        />
+        /> */}
       </FamilySection>
 
       <FamilySection
