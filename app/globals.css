@@ -23,6 +23,8 @@ body { margin: 0; background: var(--surface); color: var(--ink); font-family: va
 img { max-width: 100%; }
 a { color: var(--link); text-underline-offset: 3px; }
 a:hover { color: var(--blue-deep); }
+/* keep filled link-buttons' text white over the deep-blue hover fill (a:hover would otherwise win) */
+a.iy-btn--primary:hover { color: var(--on-brand); }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
 [id] { scroll-margin-top: 24px; }
 
