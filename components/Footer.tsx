@@ -21,10 +21,14 @@ export function Footer() {
             </p>
           </div>
           <div className="stack" style={{ gap: 8 }}>
-            <p className="eyebrow">Explore</p>
-            <Link className="foot-link" href="/products">Products</Link>
+            <p className="eyebrow">Products</p>
+            <Link className="foot-link" href="/products">All products</Link>
+            <Link className="foot-link" href="/milk-powder">Instant Milk Powder</Link>
             <Link className="foot-link" href="/milk-zones">Milk Zones</Link>
             <Link className="foot-link" href="/distributors">Find a distributor</Link>
+          </div>
+          <div className="stack" style={{ gap: 8 }}>
+            <p className="eyebrow">Company</p>
             <Link className="foot-link" href="/about">About us</Link>
             <Link className="foot-link" href="/contact">Contact</Link>
           </div>
@@ -37,10 +41,9 @@ export function Footer() {
             </p>
             <a className="foot-link" href={company.phoneHref}>{company.phone}</a>
             <a className="foot-link" href={`mailto:${company.email}`}>{company.email}</a>
-          </div>
-          <div className="stack" style={{ gap: 12 }}>
-            <p className="eyebrow">Follow @AlwaysInyange</p>
-            <SocialLinks />
+            <div style={{ marginTop: 8 }}>
+              <SocialLinks />
+            </div>
           </div>
         </div>
         <div
