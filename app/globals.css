@@ -74,7 +74,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .stat-figure { margin: 0; font-family: var(--font-display); font-weight: 800; color: var(--inyange-blue); }
 
 /* header */
-.site-header { width: 100%; background: var(--surface); border-bottom: 1px solid var(--line); }
+.site-header { position: relative; z-index: 30; width: 100%; background: var(--surface); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; min-height: 96px; padding-top: 12px; padding-bottom: 12px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-name { font-family: var(--font-display); font-size: 20px; line-height: 22px; font-weight: 800; color: var(--inyange-blue); }
@@ -83,6 +83,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: var(--radius-pill); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; }
 .nav-link:hover { background: var(--frost); color: var(--blue-deep); }
 .nav-link[aria-current="page"] { background: var(--frost); color: var(--inyange-blue); }
+
+.main-nav { display: flex; align-items: center; gap: 16px; }
+.menu-toggle { display: none; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--inyange-blue); cursor: pointer; }
+@media (max-width: 900px) {
+  .site-header .wrap { position: relative; flex-wrap: nowrap; min-height: 80px; }
+  .menu-toggle { display: inline-flex; }
+  .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 20; flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px 20px; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+  .site-header[data-open="true"] .main-nav { display: flex; }
+  .nav-list { flex-direction: column; flex-wrap: nowrap; }
+  .nav-link { width: 100%; }
+  .nav-cta { justify-content: center; }
+  .brand-tag { display: none; }
+}
 
 /* footer links */
 .site-footer { width: 100%; background: var(--blue-deep); color: var(--on-brand); }
