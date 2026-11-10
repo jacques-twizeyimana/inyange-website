@@ -20,6 +20,7 @@ export const mainNav = [
   { label: "Products", href: "/products" },
   { label: "Milk Zones", href: "/milk-zones" },
   { label: "About us", href: "/about" },
+  { label: "Newsroom", href: "/newsroom" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

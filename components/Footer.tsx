@@ -30,6 +30,7 @@ export function Footer() {
           <div className="stack" style={{ gap: 8 }}>
             <p className="eyebrow">Company</p>
             <Link className="foot-link" href="/about">About us</Link>
+            <Link className="foot-link" href="/newsroom">Newsroom</Link>
             <Link className="foot-link" href="/contact">Contact</Link>
           </div>
           <div className="stack" style={{ gap: 8 }}>
