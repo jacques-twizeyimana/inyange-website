@@ -15,20 +15,38 @@ const buyerTypes = [
 ];
 const families = ["Milk", "Milk products", "Water", "Juices"];
 
-/* Placeholder listings from the design, until the distributor directory is supplied. */
-function distributorsFor(province: string, district: string) {
-  return [1, 2].map((n) => ({
-    name: `[Distributor name ${n}]`,
-    area: `Serves ${district} · ${province}`,
-    address: `[Street address], ${district}`,
-    phone: "[Phone number]",
-  }));
-}
+/* Real distributors, from https://www.inyangeindustries.com/distributors */
+const distributors = [
+  {
+    name: "Ali Distributor",
+    district: "Nyarugenge",
+    area: "Central business district, Kigali",
+    address: "CHIC Building, Kigali District",
+    phone: "0788 780 805",
+    tel: "+250788780805",
+  },
+  {
+    name: "Majyambere Distributor",
+    district: "Kicukiro",
+    area: "Gikondo",
+    address: "Gikondo, Kicukiro",
+    phone: "0785 910 807",
+    tel: "+250785910807",
+  },
+  {
+    name: "Byagatonda Distributor",
+    district: "Gasabo",
+    area: "Kimironko",
+    address: "Kimironko, near the market, Gasabo District",
+    phone: "0788 358 664",
+    tel: "+250788358664",
+  },
+];
 
 export function DistributorFinder() {
   const [province, setProvince] = useState(provinceNames[0]);
-  const [district, setDistrict] = useState(provinces[provinceNames[0]][0]);
-  const results = distributorsFor(province, district);
+  const [district, setDistrict] = useState(""); // "" = all districts in the province
+  const results = distributors.filter((d) => (district ? d.district === district : provinces[province].includes(d.district)));
 
   return (
     <div className="wrap row" style={{ gap: 32, alignItems: "flex-start" }}>
@@ -49,7 +67,7 @@ export function DistributorFinder() {
             value={province}
             onChange={(e) => {
               setProvince(e.target.value);
-              setDistrict(provinces[e.target.value][0]);
+              setDistrict("");
             }}
           >
             {provinceNames.map((p) => (
@@ -62,6 +80,7 @@ export function DistributorFinder() {
         <div className="field">
           <label htmlFor="d-district">District</label>
           <select id="d-district" value={district} onChange={(e) => setDistrict(e.target.value)}>
+            <option value="">All districts</option>
             {provinces[province].map((d) => (
               <option key={d} value={d}>
                 {d}
@@ -93,11 +112,17 @@ export function DistributorFinder() {
       <div className="stack" style={{ flex: "999 1 520px", minWidth: 0, gap: 16 }}>
         <div className="row" style={{ justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
           <h2 id="results" tabIndex={-1} className="heading" aria-live="polite">
-            Distributors serving {district}
+            {district ? `Distributors serving ${district}` : `Distributors in ${province}`}
           </h2>
           <span className="caption">{province}</span>
         </div>
         <ul className="stack" style={{ listStyle: "none", margin: 0, padding: 0, gap: 16 }}>
+          {results.length === 0 && (
+            <li className="muted" style={{ padding: 24, border: "1px dashed var(--line)", borderRadius: "var(--radius-lg)" }}>
+              We don’t have a listed distributor in {district || province} yet. Call {company.phone} and our sales team will connect
+              you with one.
+            </li>
+          )}
           {results.map((r) => (
             <li
               key={r.name}
@@ -124,10 +149,15 @@ export function DistributorFinder() {
                 <span>{r.phone}</span>
               </div>
               <div className="row" style={{ gap: 10, justifyContent: "flex-end" }}>
-                <a className="iy-btn iy-btn--outline iy-btn--small" href={company.phoneHref}>
+                <a className="iy-btn iy-btn--outline iy-btn--small" href={`tel:${r.tel}`}>
                   Call
                 </a>
-                <a className="iy-btn iy-btn--primary iy-btn--small" href="#results">
+                <a
+                  className="iy-btn iy-btn--primary iy-btn--small"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${r.name} ${r.address} Rwanda`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Directions
                 </a>
               </div>
