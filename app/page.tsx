@@ -124,6 +124,7 @@ export default function HomePage() {
       <section style={{ paddingBottom: 96 }}>
         <div className="wrap">
           <div className="spotlight">
+            <span className="iy-badge iy-badge--blue spotlight-badge">New</span>
             <Image
               className="spotlight-shot"
               src={milkPowder}
@@ -131,7 +132,6 @@ export default function HomePage() {
               sizes="(max-width: 720px) 80vw, 420px"
             />
             <div className="stack" style={{ gap: 16, alignItems: "flex-start" }}>
-              <span className="iy-badge iy-badge--blue">New</span>
               <h2 className="display-l">Instant Whole Milk Powder</h2>
               <p className="script" style={{ color: "var(--inyange-blue)" }}>
                 The jewel of Nyagatare.
@@ -140,17 +140,7 @@ export default function HomePage() {
                 Our newest product is made at the Nyagatare Milk Powder Plant from Rwandan farmers’ milk, to replace
                 imported powder. Just add water. In 1 kg packs.
               </p>
-              <ul className="spotlight-facts">
-                <li>
-                  <strong>650,000 L</strong>
-                  <span className="caption">Milk a day the plant is built to process</span>
-                </li>
-                <li>
-                  <strong>US$54 million</strong>
-                  <span className="caption">Invested in the plant, inaugurated in July 2024</span>
-                </li>
-              </ul>
-              <Link className="iy-btn iy-btn--primary" href="/products#milk">
+              <Link className="iy-btn iy-btn--primary" href="/milk-powder">
                 Discover milk powder
               </Link>
             </div>
