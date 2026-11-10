@@ -1,3 +1,4 @@
+import { LazyContactMap } from "@/components/maps/lazy";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
@@ -72,17 +73,8 @@ export default function ContactPage() {
             <ContactForm />
           </div>
           <div className="stack" style={{ flex: "1 1 420px", minWidth: 0, gap: 16 }}>
-            <div role="img" aria-label="Map showing Inyange Industries in Masaka, Kigali" className="map-box" style={{ flex: "1 1 auto", minHeight: 360 }}>
-              <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <path d="M0 60 C120 90 200 40 400 80" stroke="#d3e3f2" strokeWidth="10" fill="none" />
-                <path d="M120 0 L180 300 M0 200 L400 170" stroke="#d3e3f2" strokeWidth="6" fill="none" />
-                <path d="M0 250 C100 230 160 280 260 250 S360 220 400 240" fill="none" stroke="#8fd3f5" strokeWidth="10" opacity=".7" />
-                <circle cx="210" cy="140" r="14" fill="#005eaa" />
-                <circle cx="210" cy="140" r="5" fill="#ffffff" />
-              </svg>
-              <span className="map-label" style={{ marginTop: 90 }}>
-                Inyange Industries · KN 3 Rd, Masaka
-              </span>
+            <div style={{ flex: "1 1 auto", minHeight: 360, display: "flex" }}>
+              <LazyContactMap />
             </div>
             <a className="iy-btn iy-btn--outline" href={company.mapsUrl} style={{ alignSelf: "flex-start" }}>
               Open in Google Maps

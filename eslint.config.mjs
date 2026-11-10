@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Vendored from the Inyange design system. Kept as close to upstream as possible; local fixes
     // are marked "Site patch" and must be re-applied if the file is re-synced.
     "lib/inyange/bundle.js",
+    // Vendored from mapcn (shadcn registry), kept as upstream.
+    "components/ui/map.tsx",
   ]),
 ]);
 

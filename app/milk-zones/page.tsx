@@ -8,7 +8,7 @@ import { MilkZoneFinder } from "./MilkZoneFinder";
 
 export const metadata: Metadata = {
   title: "Milk Zones",
-  description: "Inyange Milk Zones pour fresh pasteurised milk and Ikivuguto by the glass in neighbourhoods across Kigali.",
+  description: "Inyange Milk Zones pour fresh pasteurised milk and Ikivuguto by the glass in neighbourhoods across Rwanda.",
 };
 
 const offers = [
@@ -100,7 +100,7 @@ export default function MilkZonesPage() {
 
       <section id="find" className="section">
         <div className="wrap stack" style={{ gap: 32 }}>
-          <SectionHead eyebrow="Find a Milk Zone" title="There’s one near you." lead="Choose your district to see Milk Zones nearby." />
+          <SectionHead eyebrow="Find a Milk Zone" title="There’s one near you." lead="Choose your province and district to see Milk Zones nearby." />
           <MilkZoneFinder />
         </div>
       </section>

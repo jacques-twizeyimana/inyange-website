@@ -1,0 +1,14 @@
+/* Tailwind utilities for the mapcn map only (no preflight, so the rest of the site is untouched). */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "./map.tsx";
+
+@theme inline {
+  --color-background: var(--surface);
+  --color-foreground: var(--ink);
+  --color-muted: var(--surface-sunken);
+  --color-muted-foreground: var(--ink-muted);
+  --color-popover: var(--surface-raised);
+  --color-popover-foreground: var(--ink);
+  --color-border: var(--line);
+}
